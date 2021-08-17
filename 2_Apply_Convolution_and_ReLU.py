@@ -18,14 +18,14 @@ import tensorflow as tf
 
 kernel = tf.constant([
     [-1, -1, -1],
-    [-1, -8, -1],
+    [-1,  8, -1],
     [-1, -1, -1],
 ])
 
 plt.figure(figsize=(3, 3))
 show_kernel(kernel)
 
-image_filter = tf.nn.Conv2D(
+image_filter = tf.nn.conv2d(
     input=image,
     filters=kernel,
     strides=1,
